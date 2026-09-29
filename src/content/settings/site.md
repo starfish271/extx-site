@@ -1,16 +1,16 @@
 ---
-name: Inventing Interactive Systems Lab Docs
+name: Experimental Textiles Lab Docs
 nav_initials: <
-tagline: Class and personal projects with electronics, arduino, and more.
+tagline: Class and personal projects with textiles
 about_title: About This Site
 about_bio:
   - I'm Gwyn Fox, a senior studying Creative Technology and Design at the ATLAS Institute, University of Colorado Boulder. My work lives at the intersection of physical computing, fabrication, and creative coding — I build things you can touch, wear, and play with.
-  - This portfolio documents my process across coursework and personal projects, from breadboard prototypes to finished builds.
+  - This portfolio documents my process across coursework and personal projects, from prototypes to finished builds.
 skills:
-  - electronics
-  - Arduino
-  - fabrication
-  - wearables
+  - weaving
+  - e-textiles
+  - sewing
+  - rigid heddle loom
   - creative coding
 contact_links:
   - label: email
