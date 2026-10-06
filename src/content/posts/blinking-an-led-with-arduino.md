@@ -1,5 +1,5 @@
 ---
-title: 'Lab 1: Making a book loom'
+title: 'Lab 1: Making a book l'
 date: 2025-09-20
 summary: Using an esp32, tinfoil, cardboard, and jumper wires to make simple capacitive touch systems.
 cover: /project/uploads/IMG_2768.jpeg
