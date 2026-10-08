@@ -4,8 +4,8 @@ nav_initials: <
 tagline: Class and personal projects with textiles
 about_title: About This Site
 about_bio:
-  - I'm Gwyn Fox, a senior studying Creative Technology and Design at the ATLAS Institute, University of Colorado Boulder. My work lives at the intersection of physical computing, fabrication, and creative coding — I build things you can touch, wear, and play with.
-  - This portfolio documents my process across coursework and personal projects, from prototypes to finished builds.
+  - I'm Gwyn Fox, a senior studying Creative Technology and Design at the ATLAS Institute, University of Colorado Boulder. My work lives at the intersection of physical computing, fabrication, and creative coding.
+  - This portfolio documents my projects, mainly for Experimental Textiles, but also across other coursework and personal projects working with textiles, from prototypes to finished builds.
 skills:
   - weaving
   - e-textiles
