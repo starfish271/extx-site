@@ -1,7 +1,7 @@
 ---
 title: 'Lab 3: Warping and Weaving'
 date: 2026-09-21T19:05:00
-summary: This week we warped the loom and made three different swatches using different techniques.
+summary: This week we warped the rigid heddle loom and made three different swatches using different techniques.
 cover: /uploads/D68D0F33-55CE-42D6-9DF3-956A85E8D721_1_102_o.jpeg
 draft: false
 status: in-progress
