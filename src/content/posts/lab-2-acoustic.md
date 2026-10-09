@@ -68,7 +68,12 @@ blocks:
     caption: paracord and clip connected to magnet wire
     width: normal
   - type: paragraph
-    body: After making all three connectors, I connected my multimeter to the clips, and there was definitely a connection being made, not very conductive, but resistive.
+    body: After making all three connectors, I connected my multimeter to the clips, and there was definitely a connection being made, not very conductive, but resistive. I wanted to try bringing the silicone coated magnet wire out of the paracord and wrapping it around the outside, then sewing it back through with a sewing needle. It made a cool pattern on the outside of the paracord, and had the same conductivity as the others.
+  - type: photo
+    image: /uploads/D3618962-05D5-4195-B8D4-55585A83C0B1_1_102_o.jpeg
+    alt: sewing the wire
+    caption: sewing and wrapping the wire
+    width: normal
   - type: heading
     text: Reflection
   - type: paragraph
