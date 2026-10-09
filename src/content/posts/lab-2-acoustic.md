@@ -2,7 +2,7 @@
 title: 'Lab 2: Making Connectors'
 date: 2026-09-28T17:33:00
 summary: This week we made connectors with clips, conductive tape, paracord, silicone coated magnet wire, and shrink tubing.
-cover: /uploads/67FBF617-3A5B-429D-83EE-4645D24E485D_4_5005_c.jpeg
+cover: /uploads/885E48A2-ECC4-4385-A1D3-34FDE34CC843_4_5005_c.jpeg
 draft: false
 status: completed
 blocks:
