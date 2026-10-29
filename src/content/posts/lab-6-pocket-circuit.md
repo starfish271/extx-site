@@ -72,4 +72,8 @@ blocks:
     alt: closed circuit from the back
     caption: closed circuit from the back
     width: normal
+  - type: heading
+    text: Reflection
+  - type: paragraph
+    body: I had a lot of fun with this assignment. It made me think about the possibilities of using parts of a circuit as functional decorative elements in a textile design, and how I could use a textile like a breadboard. I definitely want to keep working with LEDs and next time try weaving in a string of lights.
 ---
