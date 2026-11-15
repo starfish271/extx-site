@@ -34,4 +34,29 @@ blocks:
       I wanted to create an experiment that was simple, but still allowed me multiple testing possibilities. I planned to warp the loom in 5 sections, alternating between regular and heated yarn, so that I could test two different circuits. I had two different threads I could use for a heating element, so one of the circuits uses copper thread, the other uses stainless steel thread (or silver, I actually don't know what the material is). For the actual weaving part, I didn't plan this out too much and freestyled pretty much the whole way, alternating between different colors of thermochromic yarn and regular yarn. I mainly stuck with plain tabby, but I tried to do some twill-like patterns toward the end. The goal behind this experiment was to test variation in heating and what this looks like with different patterns woven in between the heating elements, so I tried a new technique each time I switched the weft color. The other part of planning was wiring the heating element. My goal was just to make a breadboard prototype, later I will worry about making the swatch freestanding with a connected power source, but first I needed to create a working, programmable circuit. 
 
       The first thing I tried was connecting each end of the wire to a 9V battery's positive and negative terminals. reminder: DO NOT DO THIS, I almost started a fire. To do this safely, calculate the resistance needed (based on your power source and thread resistance),  connect your thread ends to jumper wire or connector clips, add desired amount of resistance and wire this up on a breadboard with your power source and microcontroller. If you want this to be even safer and better, use a MOSFET transistor in your circuit. A npn 2222 could also work here, but I only made this work once and never again, the npn 2222 doesn't draw enough current for my heating elements.
+
+
+      I wrote a simple arduino script to flash to my esp32 development board that controls the connected heating element by turning it on for a few seconds, and off for a few seconds.
+  - type: code
+    language: cpp
+    filename: arduino script for switching on/off a single connected warp circuit
+    code: |-
+      const int HEATER_PIN = 4;
+
+      void setup() {
+      Serial.begin(115200);
+      pinMode(HEATER_PIN, OUTPUT);
+      digitalWrite(HEATER_PIN, LOW);
+      delay(2000);
+      }
+
+      void loop() {
+        Serial.println("heater on");
+        digitalWrite(HEATER_PIN, HIGH);
+        delay(10000);
+
+        Serial.print("heater off");
+        digitalWrite(HEATER_PIN, LOW);
+        delay(3000);
+      }
 ---
