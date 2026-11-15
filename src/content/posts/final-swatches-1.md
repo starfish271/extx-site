@@ -7,7 +7,7 @@ draft: false
 status: in-progress
 blocks:
   - type: heading
-    text: Materials, Process, and Planning
+    text: 'Process Journal: Materials, Process, and Planning'
   - type: paragraph
     body: |-
       Materials:
