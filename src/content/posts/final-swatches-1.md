@@ -59,4 +59,12 @@ blocks:
         digitalWrite(HEATER_PIN, LOW);
         delay(3000);
       }
+  - type: heading
+    text: 'Process Journal: debugging a swatch'
+  - type: paragraph
+    body: |-
+      I thought I had a solid understanding of how to set up this circuit, but I ran into so many issues in the process of getting the resistive thread to heat up. It was challenging to get a solid connection to the thread, do the right calculations, and determine where the circuit was failing. Usually the problems I run into when programming circuits are issues in the code, but this project required me to do a lot of physical debugging by testing different connection points with a multimeter. 
+      I first set up my circuit by connecting GPIO 4 on my ESP32 to the base of the npn 2222 with a 220 ohm resistor. Using the 5v pin as my power source, I connected that the breadboard power rail, and one of the ESP's GND pins connected to the negative side of the power rail. The base of the transistor is also connected to the ground rail with a 10k ohm resistor. The transistor's collector leg is connected to one end of the resistive thread, with the other end of the resistive thread connected to the power rail. Then, connect the transistor's emitter to GND. 
+      At first, I thought this circuit was working, because it started heating up the swatch when I ran the code. Then I realized that I had one or two connections out of place, and somehow it was completing the circuit without the transistor, so it was not allowing the heating element to switch between on/off states. 
+      When I connected it correctly as described above, it did not work anymore, and this sent me down a rabbit hole. I connected the multimeter to each connection point in the circuit to make sure everything was connected and the voltage was moving through the heating element. It seemingly passed every test, but after burning out 3 transistors, 2 batteries, and 1 small fire, I concluded that something was wrong. My best solution for now is: new components. I did a bit more research and ordered some IRLZ44N transistors to replace the npn2222.
 ---
