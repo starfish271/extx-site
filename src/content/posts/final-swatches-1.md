@@ -59,6 +59,31 @@ blocks:
         digitalWrite(HEATER_PIN, LOW);
         delay(3000);
       }
+  - type: photo
+    image: /uploads/9F0B597A-F285-4066-A67F-3860A4CAB93F_1_105_c.jpeg
+    alt: embedding copper thread into thermochromic yarn with a sewing needle
+    caption: 'embedding copper thread into thermochromic yarn: using a sewing needle to feed the resistive thread through color-changing yarn'
+    width: normal
+  - type: photo
+    image: /uploads/3ACFCF59-5587-41F0-890B-A6C7C488A5E2_1_105_c.jpeg
+    alt: thermochromic warp thread embedded with resistive thread, copper tape for connection points
+    caption: thermochromic warp thread embedded with resistive thread, copper tape for connection points
+    width: normal
+  - type: photo
+    image: /uploads/78D39B8F-CC41-4E4D-8B4E-39487B0F71A8_4_5005_c.jpeg
+    alt: loom warped in 5 sections, using an embroidery machine hoop as loom
+    caption: warp the loom in separate sections, this weave is using an embroidery machine hoop as the loom
+    width: normal
+  - type: photo
+    image: /uploads/FFFBFDAC-3B59-4CCF-892E-C17FF3BCAB91_1_105_c.jpeg
+    alt: swatch after weaving
+    caption: swatch after weaving, orange = thermochromic (yellow), gray = thermochromic (pink), navy/light blue don't change color
+    width: normal
+  - type: photo
+    image: /uploads/53A95918-77D2-44DE-9AA9-0FA262A5441A_1_105_c.jpeg
+    alt: finished swatch activated by body heat
+    caption: finished swatch activated by body heat. color change can also be activated by breath, though this is not as controlled.
+    width: normal
   - type: heading
     text: 'Process Journal: debugging a swatch'
   - type: paragraph
@@ -67,4 +92,7 @@ blocks:
       I first set up my circuit by connecting GPIO 4 on my ESP32 to the base of the npn 2222 with a 220 ohm resistor. Using the 5v pin as my power source, I connected that the breadboard power rail, and one of the ESP's GND pins connected to the negative side of the power rail. The base of the transistor is also connected to the ground rail with a 10k ohm resistor. The transistor's collector leg is connected to one end of the resistive thread, with the other end of the resistive thread connected to the power rail. Then, connect the transistor's emitter to GND. 
       At first, I thought this circuit was working, because it started heating up the swatch when I ran the code. Then I realized that I had one or two connections out of place, and somehow it was completing the circuit without the transistor, so it was not allowing the heating element to switch between on/off states. 
       When I connected it correctly as described above, it did not work anymore, and this sent me down a rabbit hole. I connected the multimeter to each connection point in the circuit to make sure everything was connected and the voltage was moving through the heating element. It seemingly passed every test, but after burning out 3 transistors, 2 batteries, and 1 small fire, I concluded that something was wrong. My best solution for now is: new components. I did a bit more research and ordered some IRLZ44N transistors to replace the npn2222.
+  - type: youtube
+    caption: "I got it to work...kinda, here's a video. My ideal result would be switching the heating element on and off in timed intervals to fade between colors, then connecting both heating elements to the microcontroller to alternate between the two. For now, I know what it looks like when the heat is on and in between states as it heats and cools. Note: takes ~30-90 sec for the color to fully shift"
+    url: https://youtu.be/S-EUHuFT3QU
 ---
