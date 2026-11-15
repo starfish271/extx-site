@@ -11,7 +11,6 @@ blocks:
   - type: paragraph
     body: |-
       Materials:
-      The only new thing I needed to source for this project was thermochromic yarn and transistors.
       \- Thermochromic Yarn (the yarn i used: [amazon link to yarn](https://www.amazon.com/Sensitive-Changing-Temperature-Crocheting-Beginners/dp/B0G39HXS92?pd_rd_w=droQH&content-id=amzn1.sym.067cfcd5-045b-45a5-8758-4a4c89764364&pf_rd_p=067cfcd5-045b-45a5-8758-4a4c89764364&pf_rd_r=4GVDDQ6BK4K3V63JST53&pd_rd_wg=kD5oF&pd_rd_r=673f5502-1e8f-40e9-8a7c-5dda2dae48b8&pd_rd_i=B0G39HXS92&ref_=pd_bap_d_grid_rp_cbr_0_1_ec_pr_t&th=1))
       \- ESP32 (this project uses an ESP32-S3, but any microcontroller compatible with Arduino IDE will do)
       \- Regular, non thermochromic yarn
