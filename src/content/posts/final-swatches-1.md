@@ -31,10 +31,13 @@ blocks:
       5\. Connect the ends of the circuit warps to a power source. There are multiple ways to do this, if you want to program the circuits to switch on and off, use a transistor instead of directly connecting heating thread ends to microcontroller/power source.
 
       Planning:
+      this resource is a great guide for working with thermochromics and includes a section with circuit diagrams:
+      [https://unstable.design/books/prototyping-experimental-textiles/docs/lessons/thermochromics/](https://unstable.design/books/prototyping-experimental-textiles/docs/lessons/thermochromics/)
+
+
       I wanted to create an experiment that was simple, but still allowed me multiple testing possibilities. I planned to warp the loom in 5 sections, alternating between regular and heated yarn, so that I could test two different circuits. I had two different threads I could use for a heating element, so one of the circuits uses copper thread, the other uses stainless steel thread (or silver, I actually don't know what the material is). For the actual weaving part, I didn't plan this out too much and freestyled pretty much the whole way, alternating between different colors of thermochromic yarn and regular yarn. I mainly stuck with plain tabby, but I tried to do some twill-like patterns toward the end. The goal behind this experiment was to test variation in heating and what this looks like with different patterns woven in between the heating elements, so I tried a new technique each time I switched the weft color. The other part of planning was wiring the heating element. My goal was just to make a breadboard prototype, later I will worry about making the swatch freestanding with a connected power source, but first I needed to create a working, programmable circuit. 
 
       The first thing I tried was connecting each end of the wire to a 9V battery's positive and negative terminals. reminder: DO NOT DO THIS, I almost started a fire. To do this safely, calculate the resistance needed (based on your power source and thread resistance),  connect your thread ends to jumper wire or connector clips, add desired amount of resistance and wire this up on a breadboard with your power source and microcontroller. If you want this to be even safer and better, use a MOSFET transistor in your circuit. A npn 2222 could also work here, but I only made this work once and never again, the npn 2222 doesn't draw enough current for my heating elements.
-
 
       I wrote a simple arduino script to flash to my esp32 development board that controls the connected heating element by turning it on for a few seconds, and off for a few seconds.
   - type: code
@@ -93,6 +96,13 @@ blocks:
       At first, I thought this circuit was working, because it started heating up the swatch when I ran the code. Then I realized that I had one or two connections out of place, and somehow it was completing the circuit without the transistor, so it was not allowing the heating element to switch between on/off states. 
       When I connected it correctly as described above, it did not work anymore, and this sent me down a rabbit hole. I connected the multimeter to each connection point in the circuit to make sure everything was connected and the voltage was moving through the heating element. It seemingly passed every test, but after burning out 3 transistors, 2 batteries, and 1 small fire, I concluded that something was wrong. My best solution for now is: new components. I did a bit more research and ordered some IRLZ44N transistors to replace the npn2222.
   - type: youtube
-    caption: "I got it to work...kinda, here's a video. My ideal result would be switching the heating element on and off in timed intervals to fade between colors, then connecting both heating elements to the microcontroller to alternate between the two. For now, I know what it looks like when the heat is on and in between states as it heats and cools. Note: takes ~30-90 sec for the color to fully shift"
+    caption: I got it to work...kinda
     url: https://youtu.be/S-EUHuFT3QU
+  - type: heading
+    text: 'Process Journal: Perseverance'
+  - type: paragraph
+    body: |-
+      I became determined to make this work. I had tried so many different batteries, resistors, microcontrollers, and 2 different types of thread. 
+      My ideal result would be switching the heating element on and off in timed intervals to fade between colors, then connecting both heating elements to the microcontroller to alternate between the two. For now, at least I know what it looks like when the heat is on and in between states as it heats and cools. Note: takes \~30-90 sec for the color to fully shift, longer for cool down. 
+      It would be ideal to have more control over the heating thread. Instead of having the timer switch on/off after so many seconds, I adjusted my arduino script to use buttons to turn the heater on/off, also adding a button to adjust the power level. I used an arduino graphics library to make a simple interface for my esp32 microcontroller. I could've just used my computer keys and my terminal, but I had to use the esp32's usbc port for a power bank since the 9V battery wasn't working, so I could no longer use terminal/serial monitor while turning heat on/off. See video below to see how this setup works.
 ---
