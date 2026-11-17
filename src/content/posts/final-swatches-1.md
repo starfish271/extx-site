@@ -1,7 +1,7 @@
 ---
 title: 'Final Swatches #1'
 date: 2026-11-09T16:51:00
-summary: For my final project, I am working with thermochromics and testing different weaving patterns and heating techniques to achieve programmable, color shifting designs. For the first round of swatches, I experimented with using resistive thread as a heating element, threaded along the inside of a strand of thermochromic warp yarn. I set up the loom by splitting the warp up into 5 sections, alternating between regular and heated yarn. This essentially made two different circuits, separated and sandwiched between insulated sections. I would then weave 1-2 inch sections using different techniques (mostly tabby, varying the yarn colors), so that I could see different effects in the heated sections created by variation in color and pattern.
+summary: For my final project, I am working with thermochromics and testing different weaving patterns and heating techniques to achieve programmable, color shifting designs. For the first round of swatches, I experimented with using resistive thread as a heating element, threaded along the inside of a strand of thermochromic warp yarn. I set up the loom by splitting the warp up into 5 sections, alternating between regular and heated yarn. This essentially made two different circuits, separated and sandwiched between insulated sections. I would then weave 1-2 inch sections using different techniques (mostly tabby, varying the yarn types/colors), so that I could see different effects in the heated sections created by variation in color and pattern.
 cover: /uploads/Screenshot 2026-11-14 at 4.51.21 PM.png
 draft: false
 status: in-progress
@@ -31,15 +31,14 @@ blocks:
       5\. Connect the ends of the circuit warps to a power source. There are multiple ways to do this, if you want to program the circuits to switch on and off, use a transistor instead of directly connecting heating thread ends to microcontroller/power source.
 
       Planning:
-      this resource is a great guide for working with thermochromics and includes a section with circuit diagrams:
+      this resource guided a lot of my planning for working with thermochromics and setting up circuits:
       [https://unstable.design/books/prototyping-experimental-textiles/docs/lessons/thermochromics/](https://unstable.design/books/prototyping-experimental-textiles/docs/lessons/thermochromics/)
 
+      I wanted to create an experiment that was simple, but still allowed me multiple testing possibilities. I planned to warp the loom in 5 sections, alternating between regular and heated yarn, so that I could test two different circuits. I had two different threads from my kit from class that I could use for a heating element. One of the circuits uses copper thread, the other is a different conductive thread. For the actual weaving part, I didn't plan this out too much and freestyled pretty much the whole way, alternating between different colors of thermochromic yarn and regular yarn. I mainly stuck with tabby, but I tried to do some twill patterns toward the end. The goal behind this experiment was to test variation in heating and what this looks like with different patterns woven in between the heating elements, so I tried a new technique each time I switched the weft color. The other part of planning was wiring the heating element. My goal was getting a working breadboard prototype.
 
-      I wanted to create an experiment that was simple, but still allowed me multiple testing possibilities. I planned to warp the loom in 5 sections, alternating between regular and heated yarn, so that I could test two different circuits. I had two different threads I could use for a heating element, so one of the circuits uses copper thread, the other uses stainless steel thread (or silver, I actually don't know what the material is). For the actual weaving part, I didn't plan this out too much and freestyled pretty much the whole way, alternating between different colors of thermochromic yarn and regular yarn. I mainly stuck with plain tabby, but I tried to do some twill-like patterns toward the end. The goal behind this experiment was to test variation in heating and what this looks like with different patterns woven in between the heating elements, so I tried a new technique each time I switched the weft color. The other part of planning was wiring the heating element. My goal was just to make a breadboard prototype, later I will worry about making the swatch freestanding with a connected power source, but first I needed to create a working, programmable circuit. 
+      The first thing I tried was connecting each end of the copper wire to a 9V battery's positive and negative terminals. Don't do that, fire hazard. To do this safely, calculate the resistance needed (based on your power source and thread resistance),  connect your thread ends to jumper wire or connector clips, use breadboard, microcontroller, jumper wires, resistors, appropriate power source. Using a MOSFET transistor allows you to switch between on and off states. I first tried using an npn2222 because I didn't have a MOSFET, but this did not draw enough current for the wire to heat up (>0.5V). 
 
-      The first thing I tried was connecting each end of the wire to a 9V battery's positive and negative terminals. reminder: DO NOT DO THIS, I almost started a fire. To do this safely, calculate the resistance needed (based on your power source and thread resistance),  connect your thread ends to jumper wire or connector clips, add desired amount of resistance and wire this up on a breadboard with your power source and microcontroller. If you want this to be even safer and better, use a MOSFET transistor in your circuit. A npn 2222 could also work here, but I only made this work once and never again, the npn 2222 doesn't draw enough current for my heating elements.
-
-      I wrote a simple arduino script to flash to my esp32 development board that controls the connected heating element by turning it on for a few seconds, and off for a few seconds.
+      I wrote a simple arduino script that controls the connected heating element by turning it on for a few seconds, and off for a few seconds.
   - type: code
     language: cpp
     filename: arduino script for switching on/off a single connected warp circuit
@@ -104,5 +103,15 @@ blocks:
     body: |-
       I became determined to make this work. I had tried so many different batteries, resistors, microcontrollers, and 2 different types of thread. 
       My ideal result would be switching the heating element on and off in timed intervals to fade between colors, then connecting both heating elements to the microcontroller to alternate between the two. For now, at least I know what it looks like when the heat is on and in between states as it heats and cools. Note: takes \~30-90 sec for the color to fully shift, longer for cool down. 
-      It would be ideal to have more control over the heating thread. Instead of having the timer switch on/off after so many seconds, I adjusted my arduino script to use buttons to turn the heater on/off, also adding a button to adjust the power level. I used an arduino graphics library to make a simple interface for my esp32 microcontroller. I could've just used my computer keys and my terminal, but I had to use the esp32's usbc port for a power bank since the 9V battery wasn't working, so I could no longer use terminal/serial monitor while turning heat on/off. See video below to see how this setup works.
+      It would be nice to have more control over the heating thread. Instead of having the timer switch on/off after so many seconds, I adjusted my arduino script to use buttons to turn the heater on/off, also adding a button to adjust the power level. I used an arduino graphics library to make a simple interface for my esp32 microcontroller. I could've just used my computer keys and my terminal, but I had to use the esp32's usbc port for a power bank since the 9V battery wasn't working, so I could no longer use terminal/serial monitor on my computer while turning heat on/off. See video below to see how this setup works.
+  - type: youtube
+    caption: sped up video of color changing swatch with remote-controlled heater
+    url: https://youtu.be/SrMLpucc6Ng
+  - type: heading
+    text: Taking swatches off the loom
+  - type: paragraph
+    body: |-
+      I cut the swatch in hald so each swatch had just one circuit. Since I used two different types of thread, this gave varied results. I couldn't get the stainless steel side to heat up, probably because the resistance was too high for the power source. 
+
+      Now that I had the circuit set up and working as intended, I started running some tests on different lengths and types of resistive thread.
 ---
