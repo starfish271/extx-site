@@ -27,14 +27,14 @@ blocks:
       1\. use a sewing needle to thread resistive thread through the center of about 24 inches of thermochromic yarn. Repeat for a second circuit.
       2\. Seal each end of the conductive color changing yarn with a piece of copper tape.
       3\. Warp the loom in 5 separate sections using 5 pieces of yarn around 24 inches long (or whatever length needed to fit loom size), wrapping each piece of yarn around the loom 4 times to create 4 warps per section (20 warps total). This setup can be adjusted depending on how big your loom is/how big your desired sample is/how many warp circuits you create, but the effect created in this experiment relies on alternating between heated and non-heated warp sections. For this setup specifically, turning both heating elements on creates two color-shifting stripes about 1 inch in width running vertically on the cloth, with the vertical stripe only visible when heated.
-      4\. weave your little heart out, try making 1-2 inch sections using different techniques to see how these vary when heated. then secure your wefts at the end. keep swatch on loom or remove swatch without cutting the circuits warps; if you have to cut warps, make sure to reconnect your circuits where appropriate before connecting to power source.
+      4\. weave away, try making 1-2 inch sections using different techniques to see how these vary when heated. then secure your wefts at the end. keep swatch on loom or remove swatch without cutting the circuits warps; if you have to cut warps, make sure to reconnect your circuits where appropriate before connecting to power source.
       5\. Connect the ends of the circuit warps to a power source. There are multiple ways to do this, if you want to program the circuits to switch on and off, use a transistor instead of directly connecting heating thread ends to microcontroller/power source.
 
       Planning:
       this resource guided a lot of my planning for working with thermochromics and setting up circuits:
       [https://unstable.design/books/prototyping-experimental-textiles/docs/lessons/thermochromics/](https://unstable.design/books/prototyping-experimental-textiles/docs/lessons/thermochromics/)
 
-      I wanted to create an experiment that was simple, but still allowed me multiple testing possibilities. I planned to warp the loom in 5 sections, alternating between regular and heated yarn, so that I could test two different circuits. I had two different threads from my kit from class that I could use for a heating element. One of the circuits uses copper thread, the other is a different conductive thread. For the actual weaving part, I didn't plan this out too much and freestyled pretty much the whole way, alternating between different colors of thermochromic yarn and regular yarn. I mainly stuck with tabby, but I tried to do some twill patterns toward the end. The goal behind this experiment was to test variation in heating and what this looks like with different patterns woven in between the heating elements, so I tried a new technique each time I switched the weft color. The other part of planning was wiring the heating element. My goal was getting a working breadboard prototype.
+      I wanted to create an experiment that was simple, but still allowed me multiple testing possibilities. I planned to warp the loom in 5 sections, alternating between regular and heated yarn, so that I could test two different circuits. I had two different threads from my kit from class that I could use for a heating element. One of the circuits uses copper thread, the other is a stainless steel thread. For the actual weaving part, I didn't plan this out too much, mainly just alternating between different colors of thermochromic yarn and regular yarn. I mostly stuck with tabby, but I tried to do some twill patterns toward the end. The goal behind this experiment was to test variation in heating and what this looks like with different patterns woven in between the heating elements, so I tried a new technique each time I switched the weft color. The other part of planning was wiring the heating element. My goal was getting a working breadboard prototype.
 
       The first thing I tried was connecting each end of the copper wire to a 9V battery's positive and negative terminals. Don't do that, fire hazard. To do this safely, calculate the resistance needed (based on your power source and thread resistance),  connect your thread ends to jumper wire or connector clips, use breadboard, microcontroller, jumper wires, resistors, appropriate power source. Using a MOSFET transistor allows you to switch between on and off states. I first tried using an npn2222 because I didn't have a MOSFET, but this did not draw enough current for the wire to heat up (>0.5V). 
 
@@ -111,7 +111,34 @@ blocks:
     text: Taking swatches off the loom
   - type: paragraph
     body: |-
-      I cut the swatch in hald so each swatch had just one circuit. Since I used two different types of thread, this gave varied results. I couldn't get the stainless steel side to heat up, probably because the resistance was too high for the power source. 
+      I cut the swatch in hald so each swatch had just one circuit. Since I used two different types of thread, this gave varied results. I couldn't get the stainless steel side to heat up, probably because the resistance was too high for the power source. The copper thread at around 24 inches long had a resistance of 1.7 ohms. Next time I want to try using this type of thread with AA batteries since the thread's resistance is so low.
 
-      Now that I had the circuit set up and working as intended, I started running some tests on different lengths and types of resistive thread.
+      Now that I had the circuit set up and working as intended, I started running some tests on different lengths and types of resistive thread. I found that the stainless steel thread works best with a 5V power source when under \~10 inches long, any longer than this and the resistance is too high for it to heat up properly. 
+
+      One thing I failed to plan for was that cutting the swatches off the loom would break the circuit. I wanted to test if the circuit would still work if i just tied the cut ends back together. See below:
+  - type: photo
+    image: /uploads/IMG_3622.jpg
+    alt: stripe after cutting swatch off the loom
+    caption: stripe after cutting swatch off the loom
+    width: normal
+  - type: paragraph
+    body: 'For the other swatch, I never got the long stainless steel thread to heat up, so I wove a shorter piece in after taking the swatch off the loom to test what this would look like:'
+  - type: photo
+    image: /uploads/IMG_3621.jpg
+    alt: shorter resistive thread
+    caption: swatch with shorter resistive thread woven in
+    width: normal
+  - type: heading
+    text: Takeaways and Next Steps
+  - type: paragraph
+    body: |-
+      These experiments were really helpful in understanding the constraints and capabilities of using resistive thread as a heating element. The most important thing I learned was the relationship between thread resistance, thread length, and power source. Up until I got the remote control working, it was hard to figure out what the problem was, but being able to turn the control the heat with a press of a button, especially changing the power level, helped me run tests faster and I realized that I wasn't considering that certain power sources work better with certain threads. 
+
+      Another thing I noticed was how the heat dissipates differently in different sections. Towards the beginning of the weave, I was using a really thick yarn. That section of the weave always cools down slower compared to the top where I only used one type of yarn. Using a thick yarn traps in heat, so I'd want to do this if trying to make the color change last longer. The time it takes for the thermochromic yarn to cool down on its own is pretty long depending on the temp of the room you're in, the color change very slow. The color change when heating up is faster, but still pretty slow.
+
+      I ordered some new supplies to use since I was running out of thread from my class kit. I got a new type of copper wire with about the same resistance as before, and new stainless steel thread with 19 ohms resistance/meter. I also got some AA batteries as i think this will be a better source for the copper wire.
+
+      For my next round of swatches, I want to make more complex designs, try multiple heating elements at once, and playing with invisibility (i.e. invisible design, plain until heated). I also would love to try overlapping multiple heating elements so that you could change the design based on which heating element is activated, the challenge here would be insulating everything so that the circuits don't short.
+
+      Also, from now on, only using wefts as circuits. The warp resistive thread worked well and looked good but cutting it off the loom breaks the circuit.
 ---
