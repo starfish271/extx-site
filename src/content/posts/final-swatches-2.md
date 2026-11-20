@@ -98,5 +98,14 @@ blocks:
   - type: heading
     text: Planning Next Steps
   - type: paragraph
-    body: Now that I have
+    body: |-
+      Now that I have a good understanding of how I want to incorporate heating elements, how to set up the circuit, and the types of designs I want to make, I am ready to start making this on the big looms at school. This will significantly speed up the weaving process, especially having the patterns planned out. The first round of swatches was just for freestyling, experimenting, and getting comfortable with incorporating circuits into fabric. The second round (this assignment) was all about polishing my technique and using the information I had gathered from the first round to inform my process. I also prepared a big bundle of my diy conductive yarn so that I have this ready to bring to the loom. 
+
+      My next steps are to get a non-thermochromic yarn identical to the orange and gray thermochromic yarns that I have. This will be easier to create the hidden message design with and I plan to make at least one swatch like this with just the two contrasting yarns and no embedded heating circuit. 
+
+      My biggest goal for my final round of swatches is to create a swatch that is programmable, meaning it can display multiple different images/shapes in the same region of the fabric. One idea that I have is weaving in a happy face shaped circuit on top of a sad face shaped circuit, both invisible until heated. Depending on which button you press with the remote control, either a smiley face or sad face will appear. 
+
+      Another idea I have is weaving a track of paw prints, pressing a button will make the color shift in sequence from left to right as if something is walking across the fabric. 
+
+      My stretch goal is making the electronic components as sleek and compact as possible. The main thing I want to experiment is the capabilities of thermochromics, but to actually incorporate this into a real product, the electronics have to be seamlessly incorporated. I want to make at least one swatch that considers the electronics in the design, whether that is a pocket, or a 3d printed enclosure for the electrical components, but either way I will likely have to do some soldering.
 ---
