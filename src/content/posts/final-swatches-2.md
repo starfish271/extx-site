@@ -108,4 +108,6 @@ blocks:
       Another idea I have is weaving a track of paw prints, pressing a button will make the color shift in sequence from left to right as if something is walking across the fabric. 
 
       My stretch goal is making the electronic components as sleek and compact as possible. The main thing I want to experiment is the capabilities of thermochromics, but to actually incorporate this into a real product, the electronics have to be seamlessly incorporated. I want to make at least one swatch that considers the electronics in the design, whether that is a pocket, or a 3d printed enclosure for the electrical components, but either way I will likely have to do some soldering.
+
+      As far as my plans for my final swatch, I want to reuse the hidden message technique, but have at least two hidden designs overlayed on top of one another so that you can switch between the two. The final swatch needs to be easy and straightforward to connect to power, and/or have an element of heat activation that does not require connecting to a power source.
 ---
